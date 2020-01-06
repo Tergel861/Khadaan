@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="http://jqmdesigner.appspot.com/gk/lib/jquery.mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+  <script>
+    $(document).on("mobileinit", function () {
+      $.mobile.autoInitializePage = false;
+      $.mobile.hashListeningEnabled = false;
+    });
+
+    function mobileInitPage() {
+      $.mobile.hashListeningEnabled = true;
+      $.mobile.initializePage();
+    }
+
+
+
+
+(function () {
+      $(document).on('pageshow', '#home', function () {
+        var table = $('#gk-825p76t').gk();
+        $('.ui-table-columntoggle-btn').css({
+          'display': 'none'
+        });
+        $('#left-menu a').on('click', function () {
+          $('#left-menu a,#footerBtn a').removeClass('ui-btn-active');
+          $('#footerBtn a').eq(0).addClass('ui-btn-active');
+          $(this).addClass('ui-btn-active');
+          var title = $(this).text();
+          $('h3').text(title + '  Category');
+          var scoreGid = $(this).attr('gid');
+          table.gid = scoreGid;
+          table.range = '';
+          table.query = '';
+          table.refresh();
+        });
+        $('#footerBtn a').on('click', function () {
+          var tableQuery = $(this).attr('query');
+          var tableRange = $(this).attr('range');
+          table.query = tableQuery;
+          table.range = tableRange;
+          table.refresh();
+        });
+      });
+    })();
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Uncomment the following to include cordova in your android project -->
+  <!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>-->
+  <!-- GK Loader use RequireJS to load module -->
+  <script src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+  <!--Plug in GK-->
+  <script src="http://jqmdesigner.appspot.com/components/jquery.gk/jquery.gk.min.js"></script>
+  <!-- Load GK components -->
+  <script components="http://jqmdesigner.appspot.com/components/gk-jquerymobile/content.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/page.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/footer.html,http://jqmdesigner.appspot.com/components/gk-ext/google-sheets-table.html,http://jqmdesigner.appspot.com/components/gk-jquerymobile/header.html"
+  callback="mobileInitPage" src="http://jqmdesigner.appspot.com/components/gk-loader/gk-loader.js"></script>
+  
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <title>EZo App</title>
+</head>
+
+<body gk-app>
+
+<!-- Page: home  -->
+  <div is="page" id="home" data-role="page" style="background-image: url(https://tergel861.github.io/Khadaan/2.png); background-position: center center; background-repeat: no-repeat;" data-theme="b">
+    <div is="header" data-role="header" data-position="fixed" data-theme="b">
+      <h3>KHADAAN</h3>
+	  <iframe width="100%" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+    </div>
+    <div is="content" role="main" class="ui-content">
+      <div videoid="bB5z6WgNksQ" is="youtube"></div>
+      <a is="button" href="https://docs.google.com/forms/d/e/1FAIpQLScQGZmeXvsZkXgHc7UEuPKefn58NBDAuwLDDOEjv2bfV7QJPg/viewform?usp=sf_link" class="ui-btn">Order product</a>
+      <div is="collapsible-set" data-role="collapsibleset">
+        <div is="collapsible" data-role="collapsible" data-collapsed="false">
+          <h3>Comment</h3>
+          <form name="form" id="form" action="https://docs.google.com/forms/d/16zkbpbEqdbcKsTE6TFT2B9oh1A6ACdNTBuR48mYyumQ/formResponse?callback=googleDocCallback" method="get">
+
+
+            <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="entry.1511876754">
+                Name:
+              </label>
+              <input name="entry.1511876754" id="entry.1511876754" placeholder value type="text">
+            </div>
+
+            <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="entry.1490292440">
+                Message:
+              </label>
+              <input name="entry.1490292440" id="entry.1490292440" placeholder value type="text">
+            </div>
+
+
+            <input type="submit" value="Submit">
+          </form>
+          <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6LeuTcgUAAAAAKciKXkr39wuReNM_ZTU7AmBD0Fp"></div>
+        </div>
+      </div>
+    </div>
+    <div is="footer" data-position="fixed" data-role="footer">
+      <div is="navbar" data-role="navbar">
+        <ul>
+          <li is="navbtn">
+            <a data-icon="bars" data-theme="b" href="#KHDN1">Brand about</a>
+          </li>
+          <li is="navbtn">
+            <a data-icon="shop" data-theme="b" href="#KHDN2">Price</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Page: KHDN1  -->
+  <div id="KHDN1" data-role="page" is="page" data-theme="b">
+    <div is="header" data-role="header" data-position="fixed">
+      <h3>KHADAAN</h3>
+      <a is="button" class="ui-btn ui-btn-left ui-btn-inline ui-icon-back ui-btn-icon-left" href="#home"></a>
+    </div>
+    <div role="main" class="ui-content" is="content">
+      <h4 is="gk-text">KH A D A A N is a Mongolian brand made in the United States using modern technology.</h4>
+      <img style="width:95%;" src="https://tergel861.github.io/Khadaan/3.png" is="image">
+      <div is="collapsible-set" data-role="collapsibleset">
+        <div is="collapsible" data-role="collapsible" data-collapsed="false" data-mini="false" data-theme="b" data-content-theme="b" data-inset="false">
+          <h3>Khadaan Cosmetics</h3>
+          <h4 is="gk-text">KH A D A A N is a Mongolian cosmetic brand founded in 2016 in Los Angeles, California, USA. Our products have over 50 different skincare and make-up products.</h4>
+          <h4 is="gk-text">Ingredients: •	Paraben-free •	Contains Vitamins C and E •	Barley, wheat, rye, oats, corn also have no alcohol content, which is superior to other brands without allergic skin.</h4>
+          <h4 is="gk-text">The KHADAAN brand is committed to delivering positive, meaningful skin changes in a safe and effective way that is manufactured in the United States using modern technology.</h4>
+          <h4 is="gk-text">We are specializing in Mongolian brand makeup products, which are made of high quality makeup that is equivalent to world famous brands. We are absolutely sure that you are 100% satisfied with the customer.</h4>
+          <h4 is="gk-text">Call +976 8008 8100</h4>
+          <h4 is="gk-text">khadaancosmetics@gmail.com</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page: KHDN2  -->
+<div is="page" id="KHDN2" data-role="page" data-theme="a">
+  <div is="header" data-role="header" data-position="fixed" data-theme="b">
+    <h3>Fruits Category</h3>
+    <a is="button" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-bars ui-mini ui-corner-all" href="#left-menu">Button</a>
+    <a is="button" class="ui-btn ui-btn-right" data-rel="back">back</a>
+  </div>
+  <div is="dragable" id="left-menu" data-role="panel" data-position="left" data-theme="b" data-position-fixed="false" data-display="overlay">
+    <span is="span">Product Category</span>
+    <a is="button" class="ui-btn ui-btn-active" data-theme="b" data-rel="close" gid="316632998">skin</a>
+    <a is="button" class="ui-btn" data-theme="b" data-rel="close" gid="1895479417">Skin care set for dry skin</a>
+    <a is="button" class="ui-btn" data-theme="b" data-rel="close" gid="1166620092">Products</a>
+  </div>
+  <div is="content" role="main" class="ui-content">
+    <table is="google-sheets-table" id="gk-825p76t" key="1ShP6OZ9Fz9KYzdONvTFnLFF_Vjsm96Gl" gid="0" headers="1"></table>
+  </div>
+  <div is="footer" data-position="fixed" data-role="footer">
+    <div is="navbar" data-role="navbar" style="padding:0; margin:0 0 -1px;">
+      <ul id="footerBtn">
+        <li is="navbtn">
+          <a data-theme="b" class="ui-btn-active ui-state-persist" query range>Price</a>
+        </li>
+        <li is="navbtn">
+          <a data-theme="b" query="select * order by C ">Low Price First</a>
+        </li>
+        <li is="navbtn">
+          <a data-theme="b" query="select * order by C desc">High Price First</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</html>
