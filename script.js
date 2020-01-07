@@ -1,12 +1,12 @@
 // file: script.js
 // Initialize Firebase
-  var firebaseConfig = {
-    apiKey: "AIzaSyAE7l7rrTNv98lYbjjGRZ5wV7cxcJGqJlU",
-    authDomain: "recap2-dbd37.firebaseapp.com",
-    databaseURL: "https://recap2-dbd37.firebaseio.com",
-    projectId: "recap2-dbd37",
-    storageBucket: "recap2-dbd37.appspot.com",
-    messagingSenderId: "1005770959632"
+var firebaseConfig = {
+    apiKey: "AIzaSyA1VoeKjuMnNflduqI1jl5T8yuvYG_v6LQ",
+    authDomain: "baba-92152.firebaseapp.com",
+    databaseURL: "https://baba-92152.firebaseio.com",
+    projectId: "baba-92152",
+    storageBucket: "baba-92152.appspot.com",
+    messagingSenderId: "467000801655"
   };
 firebase.initializeApp(config);
 
