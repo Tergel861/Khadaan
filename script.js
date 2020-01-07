@@ -7,7 +7,7 @@
     projectId: "recap2-dbd37",
     storageBucket: "recap2-dbd37.appspot.com",
     messagingSenderId: "1005770959632"
-};
+  };
 firebase.initializeApp(config);
 
 //create firebase database reference
